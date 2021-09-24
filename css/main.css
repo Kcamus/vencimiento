@@ -1,0 +1,26 @@
+body{
+  background: gray;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+
+ .centrado{
+		   margin:10px auto;
+		    display:block;
+    }
+
+
+h2 {
+  text-align: center;
+}
+h3{
+  text-align: right;
+}
+h4{
+  text-align: center;
+
+
