@@ -1,38 +1,38 @@
-<html>
-
-<TABLE width=40% border=10 align=center bgcolor=gray><TR><TD>
-
-<TABLE width=150% border=3 cellspacing=4 cellpadding=10>
-
-
-<h1> Inicio seción </h1> 
-
- <img class="centrado"src="img/Exito.png" width="50" height="50"/> 
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-        <title>  REFEVEN </title>
-          <meta charset="utf-8">   
-        <link href="css/main.css" rel ="stylesheet" />
-<script src="js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" href="./img/favicon.svg">
+  <title>Inicio de sesión</title>
 
-
+</head>
 <body>
+  <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <img src="./img/Exito.png">
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <form action="" method="POST" class="row">
+            <label for="User">Usuario:</label><br>
+            <input type="text" name="User" id="User"><br>
+            <label for="Password">Contraseña:</label><br>
+            <input type="text" name="Password" id="Password"><br>
+          </form>
+          <div class="row">
+            <i class="btn light-green">ingresar</i>
+          </div>
+        </div>
+      </div>
 
-
-<h2><FONT size=5> 
-<p>Usuario: <input type="text" name="usuario" maxlength="6"></p>
-<p>Contraseña: <input type="password" name="password" minlength="6"></p>
-
-</font><h2/>
-
-
-<h3><p> <a href="Home.html"> </a> </p> <h3/>
-
-
- <form action="Home.html" method="get">
-<h4> <FONT size=12> 
-<input type="submit" value="Aceptar"> 
-</font> <h4/>
-
+  </div>
+  
 </body>
+</html>
