@@ -16,7 +16,7 @@ function redirectTo(){
   }
 }
 
-function login(){
+ function login(){
 const TestUsers=[{user:'luispacheco',password:'1234567890'},{user:'johnbetacur', password:'123456789'}, {user:'danielecheverry', password:'1234567890'}];
 //declarar variables
  let user,password,LetAccess=false;
@@ -34,29 +34,22 @@ const TestUsers=[{user:'luispacheco',password:'1234567890'},{user:'johnbetacur',
  
  else{
    try {
-
-
-     console.log('entro altry')
-    
     
      TestUsers.forEach(element=>{
-      console.log('entro al foreach');
+    
       if(element.password==password && element.user==user){
         LetAccess=true;
-        console.log('entro al testUser if');
-        writeSession(user,password);
+         writeSession(user,password);
       }
     });
-    
-    
-    
+     
     if(LetAccess==false){
-      console.log('entro al primer if');
+   
       location.assign('/');
     }
 
     else if(LetAccess==true){
-      console.log('entro al else if');
+     
       location.assign(`./Home.html`);
     }
 
@@ -65,7 +58,6 @@ const TestUsers=[{user:'luispacheco',password:'1234567890'},{user:'johnbetacur',
     location.assign(window.location.hostname);
    }
  }
-
 }
 
 function search(){
@@ -266,9 +258,9 @@ function search(){
     
 }
  }
-function writeSession(user,password){
+async function writeSession(user,password){
   
-  document.cookie=`usuario=${user};path=/,domain=${location.hostname}`;
+  document.cookie=`usuario=${user};path=${location.hostname}`;
   document.cookie=`password=${password};path=${location.hostname}`;
 
 }
