@@ -1,5 +1,7 @@
-let btn_buscar=document.getElementById("buscar");
-btn_buscar.onclick = search;
+/*let btn_buscar=document.getElementById("buscar");
+btn_buscar.onclick = search;*/
+/*let btn_login=document.getElementById("btn_login");
+btn_login.onclick=login;*/
 
 
 
@@ -15,28 +17,56 @@ function redirectTo(){
 }
 
 function login(){
- let user,password,solicitud;
+const TestUsers=[{user:'luispacheco',password:'1234567890'},{user:'johnbetacur', password:'123456789'}, {user:'danielecheverry', password:'1234567890'}];
+//declarar variables
+ let user,password,LetAccess=false;
+
+ //asignar variables
+
  user=document.getElementById('User').value;
  password=document.getElementById('Password').value;
- if (user==null || password== null){
+
+ //verificar si variables no estan vacias
+
+ if (user=="" || password==""){
    alert("Por favor ingrese usuario y contraseña,estos son requeridos");
  }
  
  else{
    try {
 
-     solicitud= new XMLHttpRequest();
-     solicitud.onload= ()=>{
-       
-     }
+
+     console.log('entro altry')
+    
+    
+     TestUsers.forEach(element=>{
+      console.log('entro al foreach');
+      if(element.password==password && element.user==user){
+        LetAccess=true;
+        console.log('entro al testUser if');
+        writeSession(user,password);
+      }
+    });
+    
+    
+    
+    if(LetAccess==false){
+      console.log('entro al primer if');
+      location.assign('/');
+    }
+
+    else if(LetAccess==true){
+      console.log('entro al else if');
+      location.assign(`./Home.html`);
+    }
+
      
    } catch (error) {
-     
+    location.assign(window.location.hostname);
    }
  }
 
 }
-
 
 function search(){
   const datos=[{
@@ -236,3 +266,24 @@ function search(){
     
 }
  }
+function writeSession(user,password){
+  
+  document.cookie=`usuario=${user};path=/,domain=${location.hostname}`;
+  document.cookie=`password=${password};path=${location.hostname}`;
+
+}
+function readSession(){
+  let AllCookies=Array();
+  let cookies = document.cookie;
+  let cookie= cookies.split(';');
+  cookie.forEach(element => {
+    let x=element.indexOf('=');
+    if(element.includes('usuario') || element.includes('password')){
+    valorCookie=element.substring(x+1,element.length);
+    AllCookies.push(valorCookie); 
+    }
+    
+  });
+  return AllCookies;
+
+}
