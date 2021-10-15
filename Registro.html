@@ -6,32 +6,34 @@
             <meta charset="utf-8">   
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="./css/main.css">
             <link rel="icon" href="./img/favicon.svg">
   <script src="js/main.js"></script>
   <body>
-    <h2>
-      <FONT size=5> 
-        <p>Usuario: <input type="text" name="usuario" maxlength="6"></p>
-        <p>Fecha de Venciminetoo: <input type="text" name="Fecha de Vencimineto" minlength="6"></p>
-        <p>Cantidad: <input type="text" name="Cantidad" minlength="6"></p>
-        <p>Ubicación: <input type="text" name="Ubicación" minlength="6"></p>
-        <p>Observaciones: <input type="text" name="Observaciones" minlength="10"></p>
-      </font>
-    <h2/>
-
-    <form action="Home.html" method="get">
-        <h4>
-          <input type="submit" value="Cancelar"> 
-        <h4/>
-    </form>
-
-    <form action="Consulta.html" method="get">
-        <h4>
-          <input type="submit" value="Guardar"> 
-        <h4/>
-    </form> 
-   
-   <a class="boton-personalizado-5" href="Consulta.html">Guardar</a>
+  
+       
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <form action="Home.html" method="get">
+            <label for="Vencimiento">Fecha de Venciminetoo: </label><input type="text" name="Vencimineto" minlength="6"><br>
+            <label for="Cantidad">Cantidad: </label><input type="text" name="Cantidad" minlength="6"><br>
+            <label for="Ubicacion">Ubicación: </label><input type="text" name="Ubicacion" minlength="6"><br>
+            <label for="Observaciones">Observaciones:</label><input type="text" name="Observaciones" minlength="10"><br>
+          </form>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6"> <i class="btn light-green">Registrar</i></div>
+        <div class="col-6"> <i class="btn red">Cancelar</i></div>
+      </div>
+    </div>
+  
   </body>
 
   

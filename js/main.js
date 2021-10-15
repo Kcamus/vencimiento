@@ -221,7 +221,7 @@ function search(){
         row.setAttribute('id','datos');
         row.innerHTML="<div class='col-2'>"+element.EAN+"</div><div class='col-2'>"+element.producto+"</div><div class='col-2'>"+element.usuario+"</div><div class='col-2'>"+element.vencimiento+"</div><div class='col-2'>"+element.cantidad+"</div><div class='col-2'><i>Ubicación</i><div class='col-2'>"+element.ubicacion.x+"</div><div class='col-2'>"+element.ubicacion.y+"</div></div>"
         contenedor.append(row);
-        contenedor.setAttribute('class','container');
+        contenedor.setAttribute('class','container grid');
       })
     }
     else if(bandera==false){
