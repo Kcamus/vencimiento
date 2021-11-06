@@ -217,9 +217,9 @@ function search(){
 
       resultado.forEach((element)=>{
         let row=document.createElement('div');
-        row.setAttribute('class','row alert alert-primary');
+        row.setAttribute('class','row');
         row.setAttribute('id','datos');
-        row.innerHTML="<div class='col-2'>"+element.EAN+"</div><div class='col-2'>"+element.producto+"</div><div class='col-2'>"+element.usuario+"</div><div class='col-2'>"+element.vencimiento+"</div><div class='col-2'>"+element.cantidad+"</div><div class='col-2'><i>Ubicación</i><div class='col-2'>"+element.ubicacion.x+"</div><div class='col-2'>"+element.ubicacion.y+"</div></div>"
+        row.innerHTML="<div class='col-2  alert alert-primary'>"+element.EAN+"</div><div class='col-2  alert alert-primary'>"+element.producto+"</div><div class='col-2  alert alert-primary'>"+element.usuario+"</div><div class='col-2  alert alert-primary'>"+element.vencimiento+"</div><div class='col-2  alert alert-primary'>"+element.cantidad+"</div><div class='col-2  alert alert-primary'><i>Ubicación</i><div class='col-2  alert alert-primary'>"+element.ubicacion.x+"</div><div class='col-2  alert alert-primary'>"+element.ubicacion.y+"</div></div>"
         contenedor.append(row);
         contenedor.setAttribute('class','container grid');
       })

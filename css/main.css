@@ -169,17 +169,3 @@ border-color: #000000;
 
 
 
-
-
-<div style="width:100%">
-	<style>
-		.marco{
-			display: inline-block;
-			border: 1px;
-			border-style: solid;
-			text-align: center;
-			width:200px;
-			padding: 15px;
-		}
-		
-		</style>
