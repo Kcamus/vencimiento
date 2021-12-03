@@ -1,0 +1,33 @@
+html(lang="es")
+    head 
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE-edge")
+        meta(name="viewport" content="width=device-width,initial-scale=1.0")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous")
+        script(src="https://unpkg.com/react@17/umd/react.development.js" crossorigin)
+        script(src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin)
+        script(src="https://unpkg.com/babel-standalone@6/babel.min.js")
+        link(rel="icon" href="/favicon")
+        link(rel="stylesheet" href="../public/src/css/main.css")
+        title=title
+    body
+        div(class="container")
+            .row
+                .col-4 
+                .col-4
+                    img(src="../public/src/img/Exito.png") 
+                .col-4 
+            .row 
+                .col-4 
+                    .row 
+                        .col-4
+                        .row
+                        label(for="user") Usuario
+                        input(type="text" name="user" id="user" required)
+                        label(for="password") Contraseña
+                        input(type="password" name="password" require)
+                    .row 
+                        i(class="boton light-green" id="btn_login",onclick="login()") ingresar 
+
+        script(src="/main")

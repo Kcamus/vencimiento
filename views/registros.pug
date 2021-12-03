@@ -1,0 +1,29 @@
+extends layout.pug
+
+
+block content
+    .container
+        .row
+            .col-4 
+            .col-4 
+                form(action="" method="post")
+                    label(for="nombre") Nombre
+                    input#nombre(type="text", name="nombre", required) 
+                    label(for="EAN") EAN
+                    input#ean(type="text", name="EAN")
+                    label(for="vencimiento") vencimiento 
+                    input#vencimiento(type="text", name="vencimiento" ,minlength="6")
+                    label(for="cantidad") cantidad 
+                    input#cantidad(type="text", name="cantidad" ,minlength="6")
+                    label(for="ubicacion") Ubicacion
+                    input#ubicacion(type="text", name="ubicacion",minlength="6")
+                    label(for="observaciones") Observaciones
+                    textarea#observaciones(name="obervaciones", cols="30", rows="10") 
+            .col-4 
+    .container
+        .row.grid-2
+           .col-6
+               i.btn.light-green(id="registrar",onclick="newRegister()") Registrar
+           .col-6
+               i.btn.red(id="registrar",onclick="cancelRegister()") Cancelar
+    script(src="/register") 

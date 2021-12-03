@@ -1,0 +1,17 @@
+extends layout.pug 
+
+block content
+    header 
+        .col-3: h3 Consultas 
+        .col-9 
+    nav 
+        .col-9 
+            .row 
+                .col-5 
+                    form(action="",name="busqueda")
+                        input#text_search(type="text", name="input-group-text")
+                .col-5 
+                    i.btn.btn-primary(id="buscar",onclick="search()") Buscar 
+        .col-3 
+
+    script(src="/consultajs")

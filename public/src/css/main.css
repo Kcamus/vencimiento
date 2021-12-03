@@ -1,0 +1,166 @@
+
+
+h1 {text-align: left;}
+h2 {text-align: left;}
+h3{text-align: left;}
+h4{text-align: left;}
+h5{text-align: left;}
+h6{text-align: lefts;}
+label,input{width:100%;text-align: center;}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5em;
+    min-height: 2.5em;
+    box-sizing: content-box;
+    width: 100%;
+    
+}
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5em;
+    box-sizing: content-box;
+    
+}
+.center{
+    text-align: center;
+    border-radius: 0.1em;
+}
+.centrado{
+    margin:10px auto;
+   display:block;
+      }
+.ctn{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.boton{
+    border: 2px black solid;
+    border-radius: 30px;
+    font-style: normal;
+    text-align: center;
+    width: 90%;
+    padding: 0.2em;
+    margin:auto;
+    transition: width 1s;
+    
+}
+.boton:hover{
+    width: 100%;
+    cursor: pointer;
+}
+.whiteSpace{
+    min-height:10vw;
+    width: 100%;
+    background: white;
+}
+.mrg-0{
+    margin:0;
+}
+.mrg-3{
+    margin:3em
+}
+.mrg-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.rdx-1{
+    border-radius: 1em;
+}
+
+.grid{
+    display:grid;
+    
+}
+.grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-left: 0;
+    width: 100%;
+}
+.col-1 {
+    width: 8.33%;
+    min-height: 2.5em;
+
+}
+.col-2 {
+    width: 16.66%;
+    min-height: 2.5em;
+}
+.col-3 {
+    width: 25%;
+    min-height: 2.5em;
+    
+}
+.col-4 {
+    width: 33.33%;
+    min-height: 2.5em;
+}
+.col-5 {
+    width: 50%;
+    min-height: 2.5em;
+}
+.col-6{
+    width:50%;
+    min-height: 2.5em;
+    box-sizing: content-box;
+}
+.col-7 {
+    width: 58.33%;
+    min-height: 2.5em;
+}
+.col-8 {
+    width: 66.66%;
+    min-height: 2.5em;
+}
+.col-9 {
+    width: 75%;
+    min-height: 2.5em;
+}
+.col-10 {
+    width: 83.33%;
+    min-height: 2.5em;
+}
+.col-11 {
+    width: 91.66%;
+    min-height: 2.5em;
+}
+.col-12 {
+    width: 100%;
+    min-height: 2.5em;
+}
+
+.boton-personalizado-5 {
+text-decoration:none;
+font-weight: 600;
+font-size: 20px;
+color:#000000;
+padding-top:15px;
+padding-bottom:15px;
+padding-left:40px;
+padding-right:40px;
+border-width: 3px;
+border-style: solid;
+border-color: #000000;
+}
+.yellow{background:#ffe701;}
+.light-blue{background: #94d2ca;}
+.gray{background: #333e47;}
+.red{background: #f42f37;}
+.light-gray{background: #d6d8da;}
+.dark-green{background: #04534e;}
+.light-green{background:#5cb85c}
+
+
+
