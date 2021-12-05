@@ -45,20 +45,20 @@ module.exports= class Connections{
         console.log("Connection has been close");
     }
 
-    async find(db,coll){
-       let collection =this.client.db(db).collection(coll);
-        try{
 
-             let result =await collection.find({}).toArray()
-            return result;
-        }
-        catch(error){
-            return error
+    async findBy(db,coll,object){
+        let respuesta;
+        try {
+            let collection= this.client.db(db).collection(coll);
+            respuesta=  await collection.find(object).toArray();
+            console.log(respuesta);
+            
+        } catch (error) {
+            console.log(error);
         }
         
-    }
 
-    async findBy(){}
+    }
 
 
 
