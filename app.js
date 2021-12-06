@@ -2,6 +2,9 @@ const express=require('express');
 const res = require('express/lib/response');
 const path=require('path');
 const  pug=require('pug');
+let router=express.Router()
+
+
 
 
 
