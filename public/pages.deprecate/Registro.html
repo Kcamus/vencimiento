@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <h1> Registo Nuevo </h1> 
   <head>
           <title>  REFEVEN </title>
             <meta charset="utf-8">   
@@ -9,28 +8,39 @@
             <link rel="stylesheet" href="./css/main.css">
             <link rel="icon" href="./img/favicon.svg">
   <script src="js/main.js"></script>
+</head>
   <body>
   
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <h1 class="navbar-brand">Registo Nuevo</h1>
+          <form class="d-flex">
+          <button class="btn btn-primary" type="button">Inicio</button>
+          </form>
+      </div>
+    </nav>
        
     
-    <div class="container">
-      <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+    <div class="container-md">
+        <div class="card-body">
           <form action="Home.html" method="get">
-            <label for="Vencimiento">Fecha de Venciminetoo: </label><input type="text" name="Vencimineto" minlength="6"><br>
-            <label for="Cantidad">Cantidad: </label><input type="text" name="Cantidad" minlength="6"><br>
-            <label for="Ubicacion">Ubicación: </label><input type="text" name="Ubicacion" minlength="6"><br>
-            <label for="Observaciones">Observaciones:</label><input type="text" name="Observaciones" minlength="10"><br>
+            <div class="mb-3"></div>
+            <label for="Vencimiento" class="form-label">Fecha de Venciminetoo: </label>
+            <input type="text" name="Vencimineto" minlength="1" class="form-control"><br>
+            <label for="Cantidad" class="form-label">Cantidad:  </label>
+            <input type="text" name="Cantidad" minlength="6" class="form-control"><br>
+            <label for="Ubicacion" class="form-label">Ubicación: </label>
+            <input type="text" name="Ubicacion" minlength="6" class="form-control"><br>
+            <label for="Observaciones" class="form-label">Observaciones:</label>
+            <input type="text" name="Observaciones" minlength="10" class="form-control"><br>
           </form>
         </div>
         <div class="col-4"></div>
-      </div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-6"> <i class="btn light-green">Registrar</i></div>
-        <div class="col-6"> <i class="btn red">Cancelar</i></div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="btn btn-primary" type="button"> Registrar</div>
+        <div class="btn btn-primary" type="button"> Cancelar</div>
       </div>
     </div>
   
