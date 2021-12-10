@@ -1,0 +1,22 @@
+extends layout.pug 
+
+block content 
+
+    h1 API refeven.
+    h4 Sección POST.
+    p la sección POST de la api rest recibe un objeto con los siguientes campos 
+    ul 
+        li Nombre:string
+        li presentación:string
+        li cantidad:double
+        li calidad_extra:double
+        li calidad_primera:double
+        li valor_kilo:double
+        li proveedor:string
+        li lote:string
+        li fecha_elaboración: new Date(yyyy-mm-dd)
+        li fecha_vencimiento:new Date(yyyy-mm-dd)
+        li ubicación:object{x:int,y:int,z:int
+        li estado:string ["En bodega","En punto de venta","vendido","vencido","proximo a vencer"]
+
+    p la ruta requerida para realizar este proceso es <em>/post/create</em>

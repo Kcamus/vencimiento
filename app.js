@@ -2,7 +2,8 @@ const express=require('express');
 const res = require('express/lib/response');
 const path=require('path');
 const  pug=require('pug');
-let router=express.Router()
+const api=require('./API/api');
+
 
 
 
@@ -10,23 +11,34 @@ let router=express.Router()
 
 
 let app=express();
+app.use(express.json());
 app.set('view engine','pug');
+let PORT=8000  || env.PORT
+
+
 
 
 app.get("/",(req,res)=>{
     res.render('index');
 });
+
 app.get("/registro",(req,res)=>{
     res.render("registros");
 });
+
 app.get("/home",(req,res)=>{
     res.render("home");
 });
+
 app.get("/consultar",(req,res)=>{
     res.render("consultas");
 });
 
-let PORT=8000  || env.PORT
+app.use('/api',api);
+
+
+
+
 
 
 app.use("/public",express.static(__dirname+'/public'));

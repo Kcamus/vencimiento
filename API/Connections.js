@@ -64,17 +64,31 @@ module.exports= class Connections{
             -estado:string ["En bodega","En punto de venta","vendido","vencido","proximo a vencer"]
         }
  */
+
     async findBy(db,coll,object){
         let respuesta;
         try {
             let collection= this.client.db(db).collection(coll);
             respuesta=  await collection.find(object).toArray();
+            console.log(respuesta);
             return respuesta;
             
         } catch (error) {
             return error;
         }
         
+
+    }
+
+    async find(db,col,object){
+        try {
+            let collection= this.client.db(db).collection(col);
+            let respuesta=await collection.findOne(object);
+            return respuesta;
+           
+        } catch (error) {
+            return error;
+        }
 
     }
 /* 
@@ -87,13 +101,9 @@ module.exports= class Connections{
     async deleteBy(db,coll,object){
         try {
             let collection=this.client.db(db).collection(coll);
-            let respuesta= await collection.deleteOne(object);
-            if(respuesta){
-                return true;
-            }
-            else{
-                return false;
-            }
+            
+            let respuesta=collection.deleteMany(object)
+            return respuesta;
         } catch (error) {
             return error
         }
