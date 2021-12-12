@@ -1,3 +1,2 @@
-function search(){
-    console.log("it's work");
-}
+function consultar(){};
+

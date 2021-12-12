@@ -3,22 +3,48 @@ extends layout.pug
 
 block content
     .container
+        .row 
+            
         .row
             .col-4 
+               
             .col-4 
                 form(action="" method="post")
                     label(for="nombre") Nombre
                     input#nombre(type="text", name="nombre", required) 
                     label(for="EAN") EAN
                     input#ean(type="text", name="EAN")
-                    label(for="vencimiento") vencimiento 
-                    input#vencimiento(type="text", name="vencimiento" ,minlength="6")
+                    label(for="plu") PLU
+                    input#plu(type="number", name="plu" placeholder="PLU") 
                     label(for="cantidad") cantidad 
                     input#cantidad(type="text", name="cantidad" ,minlength="6")
                     label(for="ubicacion") Ubicacion
-                    input#ubicacion(type="text", name="ubicacion",minlength="6")
-                    label(for="observaciones") Observaciones
-                    textarea#observaciones(name="obervaciones", cols="30", rows="10") 
+                    input#ubicacion(type="text", name="ubicacion",minlength="6",placeholder="xx-yy-zz")
+                    label(for="presentacion") Presentacion 
+                    input#presentacion(type="text" placeholder="ejem. ramillete,saco,canastillas" name="presentacion")
+                    label(for="cal_extra") Calidad extra 
+                    input#cal_extra(type="number" name="cal_extra" placeholder="ejem. 2000") 
+                    label(for="cal_primera") Calidad primera 
+                    input#cal_primera(type="number" name="cal_primera" placeholder="ejem. 1900")
+                    label(for="val_kilo") Valor kilo
+                    input#val_kilo(type="number", name="val_kilo" placeholder="ejem. 1900")
+                    label(for="proveedor") Proveedor
+                    input#proveedor(type="text", name="proveedor" placeholder="Nombre del proveedor")
+                    label(for="lote") Lote
+                    input#lote(type="text", name="lote" placeholder="ej123456")
+                    label(for="fecha_elaboracion") Fecha elaboración
+                    input#fecha_elaboracion(type="text", name="fecha_elaboracion" placeholder="YYYY-MM-DD")
+                    label(for="vencimiento")  Fecha de vencimiento 
+                    input#fecha_vencimiento(type="text", name="vencimiento" ,minlength="6" placeholder="YYYY-MM-DD")
+                    label(for="estado") Estado
+                    select#estado(name="estado")  
+                        option(value="en bodega") En bodega 
+                        option(value="en punto de venta") En punto de venta
+                        option(value="vendido") Vendido 
+                        option(value="proximo a vencer") Proximo a vencer 
+                        option(value="vencido") vencido  
+
+
             .col-4 
     .container
         .row.grid-2
@@ -26,4 +52,4 @@ block content
                i.btn.light-green(id="registrar",onclick="newRegister()") Registrar
            .col-6
                i.btn.red(id="registrar",onclick="cancelRegister()") Cancelar
-    script(src="/register") 
+    script( src="/registerjs") 

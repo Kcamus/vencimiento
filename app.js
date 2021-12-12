@@ -44,9 +44,10 @@ app.use('/api',api);
 app.use("/public",express.static(__dirname+'/public'));
 app.use("/favicon",express.static(__dirname+"/public/src/img/favicon.svg"));
 app.use("/main",express.static(__dirname+'/public/src/js/main.js'));
-app.use("/register",express.static(__dirname+'/public/src/js/register.js'));
+app.use("/registerjs",express.static(__dirname+'/public/src/js/register.js'));
 app.use("/homejs",express.static(__dirname+'/public/src/js/home.js'));
 app.use("/consultajs",express.static(__dirname+'/public/src/js/consultas.js'));
+
 
 
 app.listen(PORT,()=>{

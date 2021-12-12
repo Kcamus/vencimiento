@@ -6,11 +6,12 @@ const itemByState=require('./get/itemByState');
 const itemBySupplier=require('./get/itemBySupplier');
 const createItem=require('./post/createItem');
 const updateStateItem=require('./update/updateStateItem');
+const find=require('./get/find');
 
 
 
 const express = require("express");
-
+    
 
 const app=express();
 app.set('views engine','pug');
@@ -23,6 +24,16 @@ router.get('/',(req,res)=>{
     return res.render('api',{title:"bienvenido a nuestra API"});
 
 });
+router.get("/get/all",(req,res)=>{
+    
+    find().then((respuesta)=>{
+       console.log(respuesta)
+       return res.json(respuesta);
+    });
+    
+});
+
+
 
 router.get("/get/date/:fecha",(req,res)=>{
   itemByDate(req.params.fecha).then((respuesta)=>{
@@ -52,23 +63,8 @@ router.get("/post",(req,res)=>{
    
 });
 router.post("/post/create",(req,res)=>{
-    let object={
-        nombre:req.body.nombre,
-        presentacion:req.body.presentacion,
-        cantidad:req.body.cantidad,
-        unidad:req.body.unidad,
-        cal_extra:req.body.calidad_extra,
-        cal_prim:req.body.calidad_primera,
-        valor_kilo:req.body.valor_kilo,
-        proveedor:req.body.proveedor,
-        lote:req.body.lote,
-        fecha_elaboracion:req.body.fecha_elaboracion,
-        fecha_vencimiento:req.body.fecha_vencimiento,
-        ubicacion:req.body.ubicacion,
-        estado:req.body.estado,
-        ean:req.body.ean,
-        plu:req.body.plu
-        }
+    let object=req.body;
+    
     
     
     

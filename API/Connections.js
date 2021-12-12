@@ -62,6 +62,9 @@ module.exports= class Connections{
             -fecha_vencimiento:new Date(yyyy-mm-dd)
             -ubicación:object{x:int,y:int,z:int
             -estado:string ["En bodega","En punto de venta","vendido","vencido","proximo a vencer"]
+            -plu:int
+            -ean:long
+            -cantidad:int1
         }
  */
 
@@ -70,7 +73,7 @@ module.exports= class Connections{
         try {
             let collection= this.client.db(db).collection(coll);
             respuesta=  await collection.find(object).toArray();
-            console.log(respuesta);
+            //console.log(respuesta);
             return respuesta;
             
         } catch (error) {

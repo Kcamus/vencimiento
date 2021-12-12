@@ -13,17 +13,18 @@ html
 		a.navbar-brand REFEVEN
 		ul.navbar-nav.float-right
 			li.nav-item
-				button.btn.btn-primary(type='button') Crear nuevo registro
+				button.btn.btn-primary(type='button' onclick="onButtonNewRegister()") Crear nuevo registro
 				| &nbsp
 			li.nav-item
-				button.btn.btn-primary(type='button') 		Consultas
+				button.btn.btn-primary(type='button' onclick="onButtonConsultas()") Consultas
 				| &nbsp
 			li.nav-item
-				button.btn.btn-primary(type='button') Cerrar Cesi&oacute;n
+				button.btn.btn-primary(type='button' onclick="onButtonCerrarSession()") Cerrar Cesi&oacute;n
 				| &nbsp
 
 	table.table(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#F2F2F2')
-		tr
+		
+		thead
 			th  Nombre 
 			th  Presentaci&oacute;n 
 			th  Cantidad 
@@ -37,21 +38,7 @@ html
 			th  Estado 
 			th  Editar 
 			th  Eliminar 
-	tbody   
-		tr
-			td   d   
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			td  s
-			button.btn.btn-primary(type='button') Editar
-			td
-			button.btn.btn-primary(type='button') Eliminar
+		tbody#tabla
+			
+		
 script(src="/homejs")

@@ -15,10 +15,5 @@ module.exports=function deleteItem(plu,vence){
     }).then((respuesta)=>respuesta);
     
 
-    
-    
-   
-    
-    
-    
+
 }
