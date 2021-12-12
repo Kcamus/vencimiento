@@ -1,29 +1,37 @@
-extends layout.pug
-
-
-block content
+doctype html
+html
+  head
+  
+    meta(charset='utf-8')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM', crossorigin='anonymous')
+    link(rel='stylesheet', href='./css/main.css')
+    link(rel='icon', href='./img/favicon.svg')
+    script(src='js/main.js')
+  body
+    nav.navbar.navbar-light.bg-light
+      .container-fluid
+        h1.navbar-brand Registro Nuevo
+        form.d-flex
+          button.btn.btn-primary(type='button') Inicio
+    .container-md
+      .card-body
+        form(action='Home.html', method='get')
+          .mb-3
+          label.form-label(for='Vencimiento') Fecha de Vencimineto: 
+          input.form-control(type='text', name='Vencimineto', minlength='1')
+          br
+          label.form-label(for='Cantidad') Cantidad: 
+          input.form-control(type='text', name='Cantidad', minlength='6')
+          br
+          label.form-label(for='Ubicacion') Ubicaci&oacute;n: 
+          input.form-control(type='text', name='Ubicacion', minlength='6')
+          br
+          label.form-label(for='Observaciones') Observaciones:
+          input.form-control(type='text', name='Observaciones', minlength='10')
+          br
+      .col-4
     .container
-        .row
-            .col-4 
-            .col-4 
-                form(action="" method="post")
-                    label(for="nombre") Nombre
-                    input#nombre(type="text", name="nombre", required) 
-                    label(for="EAN") EAN
-                    input#ean(type="text", name="EAN")
-                    label(for="vencimiento") vencimiento 
-                    input#vencimiento(type="text", name="vencimiento" ,minlength="6")
-                    label(for="cantidad") cantidad 
-                    input#cantidad(type="text", name="cantidad" ,minlength="6")
-                    label(for="ubicacion") Ubicacion
-                    input#ubicacion(type="text", name="ubicacion",minlength="6")
-                    label(for="observaciones") Observaciones
-                    textarea#observaciones(name="obervaciones", cols="30", rows="10") 
-            .col-4 
-    .container
-        .row.grid-2
-           .col-6
-               i.btn.light-green(id="registrar",onclick="newRegister()") Registrar
-           .col-6
-               i.btn.red(id="registrar",onclick="cancelRegister()") Cancelar
-    script(src="/register") 
+      .d-grid.gap-2.col-6.mx-auto
+        .btn.btn-primary(type='button')  Registrar
+        .btn.btn-primary(type='button')  Cancelar
