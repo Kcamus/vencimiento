@@ -91,8 +91,8 @@ function editItem(){
   boton1.innerText="Editar";
   boton2.innerText="Cancelar";
   
-boton1.setAttribute("onclick",`${Update(id)}`);
-boton2.setAttribute("onclick",`${cerrarVentana()}`); 
+boton1.
+boton2.
   row2.appendChild(boton1);
   row2.appendChild(boton2);
   row1.appendChild(texto);
