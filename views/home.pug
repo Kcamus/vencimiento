@@ -1,3 +1,4 @@
+
 html
 	head
 		meta(charset='UTF-8')
@@ -42,3 +43,57 @@ html
 			
 		
 script(src="/homejs")
+
+extends layout.pug 
+
+
+block content
+		nav.navbar.navbar-expand-lg.navbar-light.bg-light.h3 REFEVEN
+			.container-fluid
+			a.navbar-brand
+				ul.navbar-nav
+					.navbar-right.bg-right
+					li.nav-item
+						button.btn.btn-primary(type='button') Crear nuevo registro
+						| &nbsp
+					li.nav-item
+						button.btn.btn-primary(type='button') 		Consultas
+						| &nbsp
+					li.nav-item
+						button.btn.btn-primary(type='button') Cerrar Cesi&oacute;n
+						| &nbsp
+		.col-3: h3 Home 
+		.container
+			table.table.table-striped.table-condensed.table-bordered
+				tr
+					th  Nombre 
+					th  Presentaci&oacute;n 
+					th  Cantidad 
+					th  Calidad extra 
+					th  Calidad primera 
+					th  Valor kilo 
+					th  Lote 
+					th  Fecha elaboraci&oacute;n 
+					th  Fecha vencimiento 
+					th  Ubicaci&oacute;n 
+					th  Estado 
+					th  Editar 
+					th  Eliminar 
+					tr
+						td     
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+						td  
+							button.btn.btn-primary(type='button') Editar
+						td
+							button.btn.btn-primary(type='button') Eliminar
+				script(src="/homejs")
+
