@@ -7,10 +7,12 @@ const itemBySupplier=require('./get/itemBySupplier');
 const createItem=require('./post/createItem');
 const updateStateItem=require('./update/updateStateItem');
 const find=require('./get/find');
+const findByplu=require('./get/findByPlu');
 
 
 
 const express = require("express");
+
     
 
 const app=express();
@@ -31,6 +33,16 @@ router.get("/get/all",(req,res)=>{
        return res.json(respuesta);
     });
     
+});
+
+router.get('/get/plu/:plu',(req,res)=>{
+    let plu=req.params.plu;
+    findByplu(plu).then((respuesta)=>{
+        console.log(respuesta);
+        return res.json(respuesta);
+    }
+    );
+        
 });
 
 

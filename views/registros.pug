@@ -1,29 +1,10 @@
 extends layout.pug 
 
-block content    
-    .container
-        .row 
-            h3 Nuevo resgistro
-        .row
-            .col-4 
-               
-            .col-4 
+
 
 block content
-        nav.navbar.navbar-expand-lg.navbar-light.bg-light.h3 REFEVEN
-            .container-fluid
-            a.navbar-brand
-                ul.navbar-nav
-                    .navbar-right.bg-right
-                    li.nav-item
-                        button.btn.btn-primary(type='button' onclick="onButtonHome()") Inicio
-                        | &nbsp
-                    li.nav-item
-                        button.btn.btn-primary(type='button' onclick="onButtonConsultas()") Consultas
-                        | &nbsp
-                    li.nav-item
-                        button.btn.btn-primary(type='button' onclick="onButtonCerrarSession()") Cerrar Cesi&oacute;n
-                        | &nbsp
+       
+       
         .col-3: h3 Nuevo Registro 
         .container
                 form(action="" method="post")
@@ -60,24 +41,14 @@ block content
                         option(value="vendido") Vendido 
                         option(value="proximo a vencer") Proximo a vencer 
                         option(value="vencido") vencido  
-
-<<<<<<< HEAD
-
-            .col-4 
-    .container
-        .row.grid-2
-           .col-6
-               i.btn.light-green(id="registrar",onclick="newRegister()") Registrar
-           .col-6
-               i.btn.red(id="registrar",onclick="cancelRegister()") Cancelar
+            
+        .container
+            .row.grid-2
+                .col-6
+                    i.btn.light-green(id="registrar",onclick="newRegister()") Registrar
+                .col-6
+                    i.btn.red(id="registrar",onclick="cancelRegister()") Cancelar
     
 
 
 
-=======
-        .container
-            button.btn.btn-primary(id="registrar",onclick="newRegister()") Registrar 
-            | &nbsp
-            button.btn.btn-primary(id="registrar",onclick="cancelRegister()") Cancelar
-        script( src="/registerjs")         
->>>>>>> 5387c3d082572a7d2bc3ccb524d03fae1b075f53

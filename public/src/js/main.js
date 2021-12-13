@@ -114,6 +114,8 @@ function Update(id){
 
 };
 
+
+
 async function onUpdate(id,status){
     let request=new Request("/api/update",{
         method:"POST",
@@ -136,10 +138,38 @@ async function onUpdate(id,status){
     })
 }
 
-window.onload=()=>{
+
+    window.onload=routeHome()
+
+
+
+
+function consultar(){
+    let plu=document.getElementById("text_search").value;
+
+    request=new Request(`/api/get/plu/${plu}`);
+    fetch(request).then((data)=>{data.json().then((datos)=>{
+            
+        let tabla=document.getElementById("consulta");
+        datos.forEach(element => {
+           let row=document.createElement("tr");
+           row.setAttribute("id",element._id);
+           row.innerHTML=`<td>${element.nombre}</td><td>${element.cantidad}</td><td>${element.ubicacion.x}-${element.ubicacion.y}-${element.ubicacion.z}</td><td>${element.presentacion}</td><td>${element.valor_kilo}</td><td>${element.proveedor}</td><td>${element.lote}</td><td>${element.fecha_elaboracion}</td><td>${element.fecha_vencimiento}</td><td>${element.estado}</td><td><button type='button' onclick='editItem(event)' id=${element._id} class='btn.btn-primary conBu'>Editar</button></td><td><button id=${element._id} type='button' onclick='deleteItem(event)' class='btn.btn-primary'>Eliminar</button></td>`;
+           tabla.append(row);  
+       }
+        );
+   
+})
+  
+        
+});
+
+}
+
+function routeHome(){
     let request= new Request("/api/get/all");
     fetch(request).then((data)=>{data.json().then((datos)=>{
-            console.log(datos);
+            
              let tabla=document.getElementById("tabla");
              datos.forEach(element => {
                 let row=document.createElement("tr");
