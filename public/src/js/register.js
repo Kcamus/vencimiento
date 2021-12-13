@@ -39,4 +39,12 @@ function newRegister(){
 function cancelRegister(){
     window.location.href="/home"
 };
-
+function onButtonConsultas(){
+    window.location.href='/consultar';
+}
+function onButtonCerrarSession(){
+    window.location.href= "../";
+}
+function onButtonHome(){
+    window.location.href="/home"
+};

@@ -1,17 +1,45 @@
 extends layout.pug 
 
 block content
-    header 
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.h3 REFEVEN
+            .container-fluid
+            a.navbar-brand
+                ul.navbar-nav
+                    .navbar-right.bg-right
+                    li.nav-item
+                        button.btn.btn-primary(type='button' onclick="onButtonHome()") Inicio
+                        | &nbsp
+                    li.nav-item
+                        button.btn.btn-primary(type='button' onclick="onButtonNewRegister()") Crear nuevo registro
+                        | &nbsp
+                    li.nav-item
+                        button.btn.btn-primary(type='button' onclick="onButtonCerrarSession()") Cerrar Cesi&oacute;n
+                        | &nbsp
         .col-3: h3 Consultas 
-        .col-9 
-    nav 
-        .col-9 
-            .row 
-                .col-5 
-                    form(action="",name="busqueda")
-                        input#text_search(type="text", name="input-group-text")
-                .col-5 
-                    i.btn.btn-primary(id="buscar",onclick="search()") Buscar 
-        .col-3 
-
-    script(src="/consultajs")
+        .container
+            .col-5 
+                ul(action="",name="busqueda")
+                    input#text_search(type="text", name="input-group-text")
+            | &nbsp
+            i.btn.btn-primary(id="buscar",onclick="search()") Buscar  
+        .container
+            table.table.table-striped.table-condensed.table-bordered
+                thead
+                    th  Nombre
+                    th  EAN
+                    th  PLU
+                    th  Cantidad
+                    th  Ubicaci&oacute;n 
+                    th  Presentaci&oacute;n 
+                    th  Calidad extra 
+                    th  Calidad primera 
+                    th  Valor kilo 
+                    th  Proveedor
+                    th  Lote 
+                    th  Fecha elaboraci&oacute;n 
+                    th  Fecha vencimiento 
+                    th  Estado 
+                    th  Editar 
+                    th  Eliminar 
+                tbody#tabla
+        script(src="/consultajs")
