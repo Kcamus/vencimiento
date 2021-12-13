@@ -162,5 +162,9 @@ border-color: #000000;
 .dark-green{background: #04534e;}
 .light-green{background:#5cb85c}
 
+tr{
+    width: 3%;
+}
+
 
 

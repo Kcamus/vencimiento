@@ -71,19 +71,21 @@ router.post("/post/create",(req,res)=>{
         createItem(object).then((elem)=>{
             res.send(elem);
         })
-    
+  
 });
 router.post("/update",(req,res)=>{
-    let oldState= req.body.oldState;
+    let id= req.body.id;
     let newState=req.body.newState;
-    let respuesta=updateStateItem(oldState,newState);
+    let respuesta=updateStateItem(newState,id);
     res.send(respuesta);
 });
 
-router.delete("/delete/:plu/:vence",(req,res)=>{
+router.delete("/delete/:id",(req,res)=>{
     
-   let respuesta= deleteItem(parseInt(req.params.plu),req.params.vence);
-   res.send(respuesta);
+ let respuesta= deleteItem(req.params.id)
+    res.send(respuesta);
+   
+  
 });
 
 module.exports=router;

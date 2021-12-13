@@ -2,38 +2,24 @@ extends layout.pug
 
 
 block content
-		nav.navbar.navbar-expand-lg.navbar-light.bg-light.h3 REFEVEN
-			.container-fluid
-			a.navbar-brand
-				ul.navbar-nav
-					.navbar-right.bg-right
-					li.nav-item
-						button.btn.btn-primary(type='button',onclick="onButtonNewRegister()") Crear nuevo registro
-						| &nbsp
-					li.nav-item
-						button.btn.btn-primary(type='button', onclick="onButtonConsultas()") 		Consultas
-						| &nbsp
-					li.nav-item
-						button.btn.btn-primary(type='button',onclick="onButtonCerrarSession()") Cerrar Cesi&oacute;n
-						| &nbsp
+		
 		.col-3: h3 Home 
 		.container
 			table.table.table-striped.table-condensed.table-bordered
 				thead
 					th  Nombre 
-					th  Presentaci&oacute;n 
 					th  Cantidad 
-					th  Calidad extra 
-					th  Calidad primera 
-					th  Valor kilo 
+					th  Ubicaci&oacute;n
+					th  Presentaci&oacute;n
+					th  Valor kilo
+					th  Proveedor
 					th  Lote 
-					th  Fecha elaboraci&oacute;n 
-					th  Fecha vencimiento 
-					th  Ubicaci&oacute;n 
+					th  Fecha elaboraci&oacute;n
+					th Fecha vencimiento
 					th  Estado 
 					th  Editar 
 					th  Eliminar 
 					tr
 				tbody#tabla
-				script(src="/homejs")
+				
 

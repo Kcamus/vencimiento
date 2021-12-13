@@ -12,4 +12,19 @@ html(lang="es")
         link(rel="stylesheet" href="../public/src/css/main.css")
         title=title
     body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.h3 REFEVEN
+                .container-fluid
+                a.navbar-brand
+                    ul.navbar-nav
+                        .navbar-right.bg-right
+                        li.nav-item
+                            button.btn.btn-primary(type='button',onclick="onButtonNewRegister()") Crear nuevo registro
+                            | &nbsp
+                        li.nav-item
+                            button.btn.btn-primary(type='button',onclick="onButtonHome()")       Inicio
+                            | &nbsp
+                        li.nav-item
+                            button.btn.btn-primary(type='button',onclick="onButtonCerrarSession()") Cerrar Cesi&oacute;n
+                            | &nbsp
         block content
+        script(src="/main")
