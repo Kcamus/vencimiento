@@ -23,14 +23,14 @@ let router=express.Router();
 
 router.get('/',(req,res)=>{
 
-    return res.render('api',{title:"bienvenido a nuestra API"});
+    res.render('api',{title:"bienvenido a nuestra API"});
 
 });
 router.get("/get/all",(req,res)=>{
     
     find().then((respuesta)=>{
        console.log(respuesta)
-       return res.json(respuesta);
+        res.json(respuesta);
     });
     
 });
@@ -39,7 +39,7 @@ router.get('/get/plu/:plu',(req,res)=>{
     let plu=req.params.plu;
     findByplu(plu).then((respuesta)=>{
         console.log(respuesta);
-        return res.json(respuesta);
+        res.json(respuesta);
     }
     );
         
@@ -61,12 +61,12 @@ router.get("/get/lote/:plu/:lote",(req,res)=>{
 
 router.get("/get/state/:estado",(req,res)=>{
     itemByState(req.params.estado).then((elem)=>{
-        res.json(elem);
+     res.json(elem);
     })
 });
 router.get("/get/supplier/:proveedor",(req,res)=>{
     itemBySupplier(req.params.proveedor).then((elem)=>{
-        res.json(elem);
+         res.json(elem);
     })
 });
 
@@ -76,20 +76,19 @@ router.get("/post",(req,res)=>{
 });
 router.post("/post/create",(req,res)=>{
     let object=req.body;
-    
-    
-    
-    
+ 
         createItem(object).then((elem)=>{
             res.send(elem);
         })
   
 });
 router.post("/update",(req,res)=>{
-    let id= req.body.id;
-    let newState=req.body.newState;
-    let respuesta=updateStateItem(newState,id);
-    res.send(respuesta);
+  
+   updateStateItem(req.body.data.estado,req.body.data._id).then((respuesta=>{
+    res.json(respuesta);
+   }));
+    
+
 });
 
 router.delete("/delete/:id",(req,res)=>{

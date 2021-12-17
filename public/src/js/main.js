@@ -42,7 +42,7 @@ function newRegister(){
 function cancelRegister(){
     window.location.href="/home"
 };
-function consultar(){};
+
 
 function onButtonNewRegister(){
     window.location.href='/registro';
@@ -71,17 +71,21 @@ function deleteItem(event){
        }
    });
 }
-function editItem(){
+function editItem(event){
+
+  let id=event.target.id;
+  
   
   let container= document.createElement("div");
+  container.setAttribute("id","actionContainer")
   container.setAttribute("id","ventana");
   let texto=document.createElement("input");
-  texto.setAttribute("id","estado");
-  texto.setAttribute("type","text");
+  texto.setAttribute("id","estado")
+  texto.type="text";
   texto.setAttribute("placeholder",'vendido,en bodega,en punto de venta, vencido o proximo a vencer');
   let row1=document.createElement('div');
   let row2=document.createElement("div");
-  row1.setAttribute("class","row")
+  row1.setAttribute("class","row");
   row2.setAttribute("class","row");
   let boton1,boton2;
   boton1=document.createElement("button");
@@ -90,52 +94,50 @@ function editItem(){
   boton2.setAttribute("class",".btn btn-primary");
   boton1.innerText="Editar";
   boton2.innerText="Cancelar";
-  
-boton1.
-boton2.
+  boton1.onclick=()=>{
+     
+ 
+    let request=new Request("/api/update",{mode:"cors",method:"POST",body:JSON.stringify({data:{
+        "_id":id,
+        "estado":texto.value
+    }}),headers:{Accept:"application/json",'Content-Type': 'application/json'}});
+    fetch(request).then(respuesta=>{
+        console.log(respuesta);
+        if(respuesta.status==200){
+            console.log("Actualizado correctamente");
+            document.body.removeChild(container);
+
+        }
+        else{
+            console.log(respuesta.status);
+            console.log("algo fallo");
+        }
+    }).catch((error)=>{
+        console.error(error);
+    })
+  };
+  boton2.onclick=()=>{
+      
+    document.body.removeChild(container);
+  };
   row2.appendChild(boton1);
   row2.appendChild(boton2);
   row1.appendChild(texto);
   container.appendChild(row1);
   container.appendChild(row2);
-  let conBu=document.getElementById("conBu");
-  document.body.appendChild(container);
-
+  document.body.append(container);
 
 }
 function cerrarVentana(){
     obj=document.getElementById("ventana");
     document.body.remove(obj);
 }
-function Update(id){
-    let estado=document.getElementById("estado");
-    let respuesta=  onUpdate(id,estado).then((respuesta)=>{alert(respuesta);})
+
+
+
+
+async function onUpdate(id,estado){
     
-
-};
-
-
-
-async function onUpdate(id,status){
-    let request=new Request("/api/update",{
-        method:"POST",
-        headers:{
-            Accept:"application/json",
-            "Content-Type":"application/json"
-        },
-        body:{
-            _id:id
-        }
-    });
-    fetch(request).then(respuesta=>{
-        if(respuesta.status==200){
-            return "Actualizado correctamente";
-        }
-        else{
-            console.log(respuesta.status);
-            return "algo fallo";
-        }
-    })
 }
 
 
@@ -154,7 +156,7 @@ function consultar(){
         datos.forEach(element => {
            let row=document.createElement("tr");
            row.setAttribute("id",element._id);
-           row.innerHTML=`<td>${element.nombre}</td><td>${element.cantidad}</td><td>${element.ubicacion.x}-${element.ubicacion.y}-${element.ubicacion.z}</td><td>${element.presentacion}</td><td>${element.valor_kilo}</td><td>${element.proveedor}</td><td>${element.lote}</td><td>${element.fecha_elaboracion}</td><td>${element.fecha_vencimiento}</td><td>${element.estado}</td><td><button type='button' onclick='editItem(event)' id=${element._id} class='btn.btn-primary conBu'>Editar</button></td><td><button id=${element._id} type='button' onclick='deleteItem(event)' class='btn.btn-primary'>Eliminar</button></td>`;
+           row.innerHTML=`<td>${element.nombre}</td><td>${element.cantidad}</td><td>${element.ubicacion.x}-${element.ubicacion.y}-${element.ubicacion.z}</td><td>${element.presentacion}</td><td>${element.valor_kilo}</td><td>${element.proveedor}</td><td>${element.lote}</td><td>${element.fecha_elaboracion}</td><td>${element.fecha_vencimiento}</td><td>${element.estado}</td><td><button type='button' onclick='editItem(event)' id=${element._id} class='btn.btn-primary conBu'>Editar estado</button></td><td><button id=${element._id} type='button' onclick='deleteItemConsulta(event)' class='btn.btn-primary'>Eliminar</button></td>`;
            tabla.append(row);  
        }
         );
@@ -165,6 +167,21 @@ function consultar(){
 });
 
 }
+function deleteItemConsulta(event){
+    let id= event.srcElement.id;
+    let tabla=document.getElementById("consulta");
+     let item=document.getElementById(id);
+    let request=new Request(`api/delete/${id}`,{
+        method:"delete",
+    });
+    fetch(request).then((respuesta)=>{
+        if(respuesta.status==200){
+            
+            tabla.removeChild(item);
+ 
+        }
+    });
+ }
 
 function routeHome(){
     let request= new Request("/api/get/all");
@@ -174,8 +191,11 @@ function routeHome(){
              datos.forEach(element => {
                 let row=document.createElement("tr");
                 row.setAttribute("id",element._id);
-                row.innerHTML=`<td>${element.nombre}</td><td>${element.cantidad}</td><td>${element.ubicacion.x}-${element.ubicacion.y}-${element.ubicacion.z}</td><td>${element.presentacion}</td><td>${element.valor_kilo}</td><td>${element.proveedor}</td><td>${element.lote}</td><td>${element.fecha_elaboracion}</td><td>${element.fecha_vencimiento}</td><td>${element.estado}</td><td><button type='button' onclick='editItem(event)' id=${element._id} class='btn.btn-primary conBu'>Editar</button></td><td><button id=${element._id} type='button' onclick='deleteItem(event)' class='btn.btn-primary'>Eliminar</button></td>`;
-                tabla.append(row);  
+                row.innerHTML=`<td>${element.nombre}</td><td>${element.cantidad}</td><td>${element.ubicacion.x}-${element.ubicacion.y}-${element.ubicacion.z}</td><td>${element.presentacion}</td><td>${element.valor_kilo}</td><td>${element.proveedor}</td><td>${element.lote}</td><td>${element.fecha_elaboracion}</td><td>${element.fecha_vencimiento}</td><td>${element.estado}</td><td><button type='button' onclick='editItem(event)' id=${element._id} class='btn.btn-primary conBu'>Editar</button></td><td><button id=${element._id} type='button' class='btn.btn-primary' onclick='deleteItem()'>Eliminar</button></td>`;
+                
+                tabla.append(row); 
+              
+                
             }
              );
         
@@ -183,4 +203,9 @@ function routeHome(){
        
              
     });
+}
+
+
+function editar(){
+
 }
